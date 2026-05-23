@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pernikahan Ara & Ozi | Undangan Digital Jawa</title>
+    <!-- Google Fonts + Font Awesome + AOS -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #fcf7f0;
+            color: #2c241a;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --javanese-gold: #c9a87b;
+            --javanese-dark: #3e2a1f;
+            --javanese-cream: #f9efdf;
+            --batik-pattern: repeating-linear-gradient(45deg, rgba(201,168,123,0.05) 0px, rgba(201,168,123,0.05) 2px, transparent 2px, transparent 8px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #e7d9cd; }
+        ::-webkit-scrollbar-thumb { background: #b48b5a; border-radius: 12px; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 600; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 90px 0; position: relative; }
+        .bg-batik { background-color: #fffaf3; background-image: var(--batik-pattern); }
+        .bg-kejawen { background: linear-gradient(135deg, #fcf5ea 0%, #f6efdf 100%); }
+        .section-title { font-size: 2.8rem; text-align: center; color: #5c3f28; margin-bottom: 12px; }
+        .section-title:after { content: '✽'; display: block; font-size: 1.6rem; color: #c9a87b; margin-top: 8px; }
+        .section-sub { text-align: center; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; font-weight: 600; color: #b28b60; }
+        .ornament { background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c9a87b" width="24px" height="24px"><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8 s8,3.59,8,8S16.41,20,12,20z M12,6c-3.31,0-6,2.69-6,6s2.69,6,6,6s6-2.69,6-6S15.31,6,12,6z"/></svg>') repeat-x; background-size: 24px; opacity: 0.3; height: 24px; margin: 20px 0; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(42,35,28,0.25), rgba(42,35,28,0.35)), url('https://s3.nevaobjects.id/ak44d-bucket/2026/05/araozi-thumb.webp'); background-size: cover; background-attachment: fixed; }
+        .hero-content { background: rgba(255, 248, 235, 0.75); backdrop-filter: blur(6px); padding: 40px; border-radius: 64px; border: 1px solid #e7cfb5; max-width: 90%; }
+        .hero-content h1 { font-size: 4rem; color: #2f241b; }
+        .countdown-jawa { background: #fff7efcc; backdrop-filter: blur(8px); border-radius: 80px; padding: 20px; display: inline-block; margin-top: 20px; }
+        .time-jawa { background: white; border-radius: 32px; padding: 10px 16px; min-width: 75px; display: inline-block; margin: 0 6px; }
+        .time-number { font-size: 1.8rem; font-weight: 800; color: #7a5b3e; }
+        .couple-wrapper, .love-timeline { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 40px; }
+        .card-jawa { background: white; border-radius: 48px; padding: 28px; width: 280px; text-align: center; border-bottom: 4px solid #c9a87b; box-shadow: 0 16px 28px rgba(0,0,0,0.05); }
+        .card-jawa img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #ecdbba; }
+        .event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .event-card { background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+        .event-card img { width: 100%; height: 220px; object-fit: cover; }
+        .event-info { padding: 24px; }
+        .map-btn { background: #efdfcf; padding: 8px 18px; border-radius: 40px; text-decoration: none; display: inline-flex; gap: 8px; color: #4f321e; font-weight: 600; margin-top: 12px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 18px; margin-top: 30px; }
+        .gallery-item { border-radius: 32px; overflow: hidden; aspect-ratio: 1 / 1.2; cursor: pointer; border: 2px solid #efdecb; transition: 0.2s; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .rsvp-card { background: rgba(255, 248, 238, 0.9); backdrop-filter: blur(4px); border-radius: 48px; padding: 40px; border: 1px solid #e2cfb5; }
+        .stats { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+        .stat-badge { background: #ebddce; border-radius: 60px; padding: 6px 20px; font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 12px 18px; border-radius: 60px; border: 1px solid #decbb6; background: white; font-family: inherit; margin-bottom: 16px; }
+        .btn-jawa { background: #7b5d41; border: none; padding: 12px 28px; border-radius: 50px; color: white; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .btn-jawa:hover { background: #5d432d; }
+        .comment-list { max-height: 400px; overflow-y: auto; margin-top: 30px; }
+        .comment-card { background: white; padding: 16px; border-radius: 32px; margin-bottom: 12px; border-left: 5px solid #c9a87b; }
+        .nav-jawa { position: fixed; bottom: 20px; left: 0; right: 0; z-index: 1000; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; background: #2b221bb3; backdrop-filter: blur(12px); border-radius: 80px; width: fit-content; margin: 0 auto; padding: 8px 20px; }
+        .nav-btn { background: transparent; border: none; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; color: #fbefdf; border-radius: 40px; cursor: pointer; display: flex; gap: 6px; align-items: center; }
+        .nav-btn:hover { background: #c9a87b; color: #291e15; }
+        .audio-control { position: fixed; bottom: 100px; right: 20px; background: #3e2a1fdb; border-radius: 60px; padding: 12px; color: #efdbbc; cursor: pointer; z-index: 99; }
+        .dresscode-palette { display: flex; gap: 12px; justify-content: center; margin: 20px 0; }
+        .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        footer { background: #31271f; color: #e0cdb8; text-align: center; padding: 40px 20px; background-image: var(--batik-pattern); }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; cursor: pointer; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 32px; }
+        @media (max-width: 700px) { .hero-content h1 { font-size: 2.2rem; } .section-title { font-size: 2rem; } .nav-btn { padding: 6px 10px; font-size: 0.7rem; } }
+    </style>
+</head>
+<body>
+<div class="nav-jawa">
+    <button class="nav-btn" data-section="home"><i class="fas fa-home"></i> Home</button>
+    <button class="nav-btn" data-section="couple"><i class="fas fa-heart"></i> Mempelai</button>
+    <button class="nav-btn" data-section="events"><i class="fas fa-calendar"></i> Acara</button>
+    <button class="nav-btn" data-section="lovestory"><i class="fas fa-book-open"></i> Love Story</button>
+    <button class="nav-btn" data-section="gallery"><i class="fas fa-image"></i> Galeri</button>
+    <button class="nav-btn" data-section="rsvp"><i class="fas fa-envelope"></i> RSVP</button>
+</div>
+<div class="audio-control" id="audioToggle"><i class="fas fa-music" id="audioIcon"></i></div>
+<audio id="bgMusic" loop><source src="https://s3.nevaobjects.id/ak44d-bucket/2026/04/GamelanJawa.mp3" type="audio/mp3"></audio>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+        <h2 data-aos="fade-down">ꦥꦼꦔꦤ꧀ꦠꦺꦤ꧀</h2>
+        <h1 data-aos="zoom-in">Ara & Ozi</h1>
+        <div class="hero-date" style="background:#3e2a1fcc; color:#f7e3ce; padding:6px 24px; border-radius:60px; display:inline-block;">Minggu Pahing, 31 Mei 2026</div>
+        <div class="countdown-jawa"><div class="countdown-timer" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;"><div class="time-jawa"><span class="time-number" id="days">00</span><br>Hari</div><div class="time-jawa"><span class="time-number" id="hours">00</span><br>Jam</div><div class="time-jawa"><span class="time-number" id="minutes">00</span><br>Menit</div><div class="time-jawa"><span class="time-number" id="seconds">00</span><br>Detik</div></div></div>
+        <button class="btn-jawa" id="toRsvpBtn" style="margin-top:25px;"><i class="fas fa-praying-hands"></i> Konfirmasi Kehadiran</button>
+    </div>
+</section>
+
+<!-- Mempelai Lengkap -->
+<section id="couple" class="bg-batik">
+    <div class="container">
+        <p class="section-sub">Kakang & Putri</p>
+        <h2 class="section-title">Mempelai</h2>
+        <div class="couple-wrapper">
+            <div class="card-jawa" data-aos="fade-right">
+                <img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/araozi-coce.webp" alt="Satria Faruzzi">
+                <h3>Satria Faruzzi (Ozi)</h3>
+                <p>Putra Bpk Taufik Susila & Ibu Suri Handayu<br>Anak ke-2<br>📍 Deli Serdang<br><i class="fab fa-instagram"></i> @faruzzi_satria</p>
+                <small style="color:#a77c54;">"Pria sederhana yang mencintai budaya Jawa."</small>
+            </div>
+            <div class="card-jawa" data-aos="fade-left">
+                <img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/araozi-mempelai.webp" alt="Siti Azzahra">
+                <h3>Siti Azzahra (Ara)</h3>
+                <p>Putri Bpk Pus Muliadi & Ibu Nina Mariana<br>Anak ke-1<br>📍 Medan<br><i class="fab fa-instagram"></i> @azzahrasiti</p>
+                <small style="color:#a77c54;">"Gadis yang lembut dan berhati mulia."</small>
+            </div>
+        </div>
+        <!-- Keluarga besar -->
+        <div style="text-align:center; margin-top:40px;" data-aos="fade-up">
+            <h3>Keluarga Besar</h3>
+            <p>Bapak Taufik Susila & Ibu Suri Handayu (Pria)<br>Bapak Pus Muliadi & Ibu Nina Mariana (Wanita)<br>serta seluruh sedulur, kadang, dan sanak keluarga.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Detail Acara Akad & Resepsi -->
+<section id="events" class="bg-kejawen">
+    <div class="container">
+        <p class="section-sub">Mangayu Bagya</p>
+        <h2 class="section-title">Rangkaian Acara</h2>
+        <div class="event-grid">
+            <div class="event-card" data-aos="flip-left">
+                <img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/araozi-akad.webp" alt="Akad">
+                <div class="event-info">
+                    <h3>💍 Akad Nikah</h3>
+                    <p><i class="far fa-calendar-alt"></i> Minggu, 31 Mei 2026 | 09.00 WIB</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jln. GDSM, Desa Sugiharjo, Sei Tuan, Batang Kuis</p>
+                    <p><i class="fas fa-tshirt"></i> Dresscode: Batik / Jas (warna tanah, hijau tua, krem)</p>
+                    <a href="https://maps.app.goo.gl/WZxVcZEdSvVxvtDM7" target="_blank" class="map-btn"><i class="fas fa-directions"></i> Buka Maps</a>
+                </div>
+            </div>
+            <div class="event-card" data-aos="flip-right">
+                <img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/araozi-resepsi.webp" alt="Resepsi">
+                <div class="event-info">
+                    <h3>🥂 Resepsi Pernikahan</h3>
+                    <p><i class="far fa-calendar-alt"></i> Minggu, 31 Mei 2026 | 10.00 - 15.00 WIB</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jln. GDSM, Sugiharjo (Lokasi sama)</p>
+                    <p><i class="fas fa-palette"></i> Tema: "Jawa Sogan & Vintage" <br> <i class="fas fa-tshirt"></i> Dresscode: Batik / Kebaya / Beskap</p>
+                    <a href="https://maps.app.goo.gl/WZxVcZEdSvVxvtDM7" target="_blank" class="map-btn"><i class="fas fa-map"></i> Google Maps</a>
+                </div>
+            </div>
+        </div>
+        <!-- Dresscode color palette -->
+        <div class="dresscode-palette">
+            <div class="color-circle" style="background:#7a5b3e;"></div>
+            <div class="color-circle" style="background:#c9a87b;"></div>
+            <div class="color-circle" style="background:#6e7c5f;"></div>
+            <div class="color-circle" style="background:#f2e0ce;"></div>
+        </div>
+        <div style="text-align:center; margin-top:20px;"><a href="#" class="map-btn" id="liveStreamBtn"><i class="fas fa-video"></i> Live Streaming (Klik untuk tautan)</a></div>
+    </div>
+</section>
+
+<!-- Love Story Timeline -->
+<section id="lovestory" class="bg-batik">
+    <div class="container">
+        <p class="section-sub">Perjalanan Cinta</p>
+        <h2 class="section-title">Love Story</h2>
+        <div class="love-timeline" data-aos="fade-up">
+            <div class="card-jawa" style="width:260px;"><i class="fas fa-hand-peace fa-2x" style="color:#c9a87b;"></i><h3>Pertemuan</h3><p>Maret 2022 di acara budaya Surakarta. Ara & Ozi pertama kali bertemu saat festival batik.</p><small>"Saling terpikat dengan senyum dan kerendahan hati."</small></div>
+            <div class="card-jawa" style="width:260px;"><i class="fas fa-heart fa-2x" style="color:#c9a87b;"></i><h3>Pendekatan</h3><p>Juni 2022 - Maret 2024. Saling mengenal lewat diskusi budaya dan kuliner Jawa.</p><small>"Dari teman menjadi belahan jiwa."</small></div>
+            <div class="card-jawa" style="width:260px;"><i class="fas fa-ring fa-2x" style="color:#c9a87b;"></i><h3>Lamaran</h3><p>15 Desember 2025. Diadakan di Pendopo keluarga, adat Jawa lengkap.</p><small>"Momen sakral yang penuh haru dan bahagia."</small></div>
+        </div>
+        <div style="text-align:center; margin-top:20px;"><p><strong>Harapan Pernikahan:</strong> "Muga-muga sakinah, mawaddah, warahmah, lan tentrem inggih."</p></div>
+    </div>
+</section>
+
+<!-- Galeri Foto -->
+<section id="gallery" class="bg-kejawen">
+    <div class="container">
+        <p class="section-sub">Kenangan Manis</p>
+        <h2 class="section-title">Galeri</h2>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item"><img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/ara-ozi-1.webp" alt="1"></div>
+            <div class="gallery-item"><img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/ara-ozi-2.webp" alt="2"></div>
+            <div class="gallery-item"><img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/ara-ozi-3.webp" alt="3"></div>
+            <div class="gallery-item"><img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/ara-ozi-4.webp" alt="4"></div>
+            <div class="gallery-item"><img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/ara-ozi-5.webp" alt="5"></div>
+            <div class="gallery-item"><img src="https://s3.nevaobjects.id/ak44d-bucket/2026/05/ara-ozi-6.webp" alt="6"></div>
+        </div>
+        <!-- Filter Instagram & QR check-in -->
+        <div style="text-align:center; margin-top:40px;">
+            <a href="#" class="map-btn" id="igFilterLink"><i class="fab fa-instagram"></i> Filter Instagram Wedding</a>
+            <a href="#" class="map-btn" id="qrCheckinLink" style="margin-left:12px;"><i class="fas fa-qrcode"></i> QR Check-in Tamu</a>
+        </div>
+    </div>
+</section>
+
+<!-- RSVP + Buku Tamu + Konfirmasi -->
+<section id="rsvp" class="bg-batik">
+    <div class="container">
+        <p class="section-sub">Konfirmasi Rawuh</p>
+        <h2 class="section-title">Buku Tamu Digital</h2>
+        <div class="rsvp-card" data-aos="fade-up">
+            <div class="stats" id="statsArea">
+                <div class="stat-badge"><i class="fas fa-check-circle"></i> Hadir: <span id="hadirCount">0</span></div>
+                <div class="stat-badge"><i class="fas fa-times-circle"></i> Tidak: <span id="tidakCount">0</span></div>
+                <div class="stat-badge"><i class="fas fa-question-circle"></i> Ragu: <span id="raguCount">0</span></div>
+            </div>
+            <form id="rsvpForm">
+                <input type="text" id="namaTamu" placeholder="Nama Lengkap (dengan gelar)" required>
+                <input type="tel" id="waTamu" placeholder="Nomor WhatsApp (untuk konfirmasi)" required>
+                <select id="statusHadir" required>
+                    <option value="">Konfirmasi Kehadiran</option>
+                    <option value="Hadir">✅ Hadir / Rawuh</option>
+                    <option value="Tidak hadir">❌ Tidak bisa hadir</option>
+                    <option value="Masih Ragu">🤔 Masih ragu / Mboten saget dipun pesthi</option>
+                </select>
+                <select id="jumlahTamu">
+                    <option value="1">Jumlah tamu: 1 orang</option>
+                    <option value="2">2 orang</option>
+                    <option value="3">3 orang</option>
+                    <option value="4+">4+ rombongan</option>
+                </select>
+                <textarea id="ucapanTamu" rows="2" placeholder="Ucapan / doa untuk pengantin (bisa bahasa Jawa / Indonesia)"></textarea>
+                <button type="submit" class="btn-jawa"><i class="fas fa-paper-plane"></i> Kirim Konfirmasi & Ucapan</button>
+            </form>
+            <div class="comment-list" id="commentList"></div>
+            <p style="font-size:12px; margin-top:16px;">*Data Anda akan tersimpan dan dapat dilihat oleh keluarga.</p>
+        </div>
+
+        <!-- Amplop Digital & Hadiah -->
+        <div style="text-align:center; margin-top:60px;" data-aos="fade-up">
+            <h3><i class="fas fa-gift"></i> Amplop Digital / Wedding Gift</h3>
+            <p>Doa restu adalah yang utama. Namun jika ingin memberi tanda kasih:</p>
+            <div style="background: white; border-radius: 48px; padding: 24px; display: inline-block; margin-top: 16px;">
+                <img src="https://s3.nevaobjects.id/ak44d-bucket/2025/11/bbri-bank-bri.webp" width="60"> &nbsp; <img src="https://s3.nevaobjects.id/ak44d-bucket/2025/11/bank-bca-blue-new.webp" width="60"><br>
+                <strong>Bank BRI / BCA</strong><br>a.n. Adni Setiawan<br>No. Rek: 1234566777<br>
+                <button id="copyRekBtn" class="map-btn" style="margin-top:12px;"><i class="far fa-copy"></i> Salin Rekening</button>
+                <div style="margin-top:16px;"><i class="fas fa-qrcode"></i> QRIS: <strong>Scan via mobile banking</strong><br><canvas id="qrisCanvas" width="120" height="120" style="border:1px solid #ddd; border-radius:16px; margin-top:8px;"></canvas></div>
+                <p><i class="fas fa-box"></i> Atau kirim hadiah ke: Jl. GDSM No 12, Desa Sugiharjo, Batang Kuis (Kediaman Mempelai)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>“Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa restu.”</p>
+    <p style="margin-top: 20px;">© 2026 Pernikahan Ara & Ozi | Undangan Digital Adat Jawa</p>
+</footer>
+
+<div class="lightbox" id="lightboxModal"><img id="lightboxImg"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 700, once: true });
+    // Countdown
+    function updateCountdown() {
+        const target = new Date("May 31, 2026 10:00:00").getTime();
+        const now = new Date().getTime();
+        const diff = target - now;
+        if(diff<=0){ ['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).innerText="00"); return; }
+        document.getElementById("days").innerText = Math.floor(diff/86400000);
+        document.getElementById("hours").innerText = Math.floor((diff%86400000)/3600000);
+        document.getElementById("minutes").innerText = Math.floor((diff%3600000)/60000);
+        document.getElementById("seconds").innerText = Math.floor((diff%60000)/1000);
+    }
+    setInterval(updateCountdown,1000); updateCountdown();
+
+    // RSVP localStorage
+    let guestbook = [];
+    function loadGuestbook() {
+        const stored = localStorage.getItem("jawa_wedding_full");
+        if(stored) guestbook = JSON.parse(stored);
+        else {
+            guestbook = [{ nama:"Bapak Susanto", wa:"0812xxxx", status:"Hadir", jumlah:"2", ucapan:"Sugeng ndalu, rahayu." }];
+            localStorage.setItem("jawa_wedding_full",JSON.stringify(guestbook));
+        }
+        renderGuestbook();
+    }
+    function renderGuestbook() {
+        const container = document.getElementById("commentList");
+        container.innerHTML = "";
+        let h=0,t=0,r=0;
+        guestbook.forEach(g=>{
+            let statLabel = g.status;
+            if(g.status==="Hadir") h++;
+            else if(g.status==="Tidak hadir") t++;
+            else if(g.status==="Masih Ragu") r++;
+            container.innerHTML += `<div class="comment-card"><strong>${escapeHtml(g.nama)}</strong> <span style="color:#ac8a60;">(${g.status} | ${g.jumlah} tamu)</span><br>💬 ${escapeHtml(g.ucapan || "Doa terbaik")}</div>`;
+        });
+        document.getElementById("hadirCount").innerText=h;
+        document.getElementById("tidakCount").innerText=t;
+        document.getElementById("raguCount").innerText=r;
+    }
+    function escapeHtml(s){ return s.replace(/[&<>]/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]); }
+    document.getElementById("rsvpForm").addEventListener("submit",(e)=>{
+        e.preventDefault();
+        const nama = document.getElementById("namaTamu").value.trim();
+        const wa = document.getElementById("waTamu").value.trim();
+        const status = document.getElementById("statusHadir").value;
+        const jumlah = document.getElementById("jumlahTamu").value;
+        const ucapan = document.getElementById("ucapanTamu").value.trim();
+        if(!nama || !status) { alert("Nama dan konfirmasi harus diisi"); return; }
+        guestbook.unshift({ nama, wa, status, jumlah, ucapan: ucapan || "Matur nuwun, wilujeng pasangan." });
+        localStorage.setItem("jawa_wedding_full",JSON.stringify(guestbook));
+        renderGuestbook();
+        document.getElementById("rsvpForm").reset();
+        alert("Konfirmasi & ucapan tersimpan. Terima kasih!");
+    });
+    loadGuestbook();
+
+    // Copy rekening
+    document.getElementById("copyRekBtn").addEventListener("click",()=>{ navigator.clipboard.writeText("1234566777 (a.n. Adni Setiawan)"); alert("Nomor rekening disalin"); });
+    // Simulasi QRIS canvas
+    let canvas = document.getElementById("qrisCanvas");
+    if(canvas) { let ctx = canvas.getContext("2d"); ctx.fillStyle = "#fff"; ctx.fillRect(0,0,120,120); ctx.fillStyle = "#000"; ctx.font="10px monospace"; ctx.fillText("QRIS SIMULASI",20,60); }
+
+    // Audio
+    const audio = document.getElementById("bgMusic");
+    const audioIcon = document.getElementById("audioIcon");
+    let playing = false;
+    document.getElementById("audioToggle").addEventListener("click",()=>{ if(playing){ audio.pause(); playing=false; audioIcon.className="fas fa-music"; } else { audio.play().then(()=>{ playing=true; audioIcon.className="fas fa-volume-up"; }).catch(()=>{}); } });
+    document.body.addEventListener("click",()=>{ if(!playing && audio.paused){ audio.play().then(()=>{ playing=true; audioIcon.className="fas fa-volume-up"; }).catch(()=>{}); } },{once:true});
+
+    // Smooth scroll
+    const sections = { home:document.getElementById("home"), couple:document.getElementById("couple"), events:document.getElementById("events"), lovestory:document.getElementById("lovestory"), gallery:document.getElementById("gallery"), rsvp:document.getElementById("rsvp") };
+    document.querySelectorAll(".nav-btn").forEach(btn=>{ btn.addEventListener("click",()=>{ const sec = btn.dataset.section; if(sections[sec]) sections[sec].scrollIntoView({behavior:"smooth"}); }); });
+    document.getElementById("toRsvpBtn").addEventListener("click",()=>{ document.getElementById("rsvp").scrollIntoView({behavior:"smooth"}); });
+    // Lightbox gallery
+    const lightbox = document.getElementById("lightboxModal"), lightboxImg = document.getElementById("lightboxImg");
+    document.querySelectorAll(".gallery-item img").forEach(img=>{ img.addEventListener("click",()=>{ lightboxImg.src = img.src; lightbox.style.display="flex"; }); });
+    lightbox.addEventListener("click",()=>{ lightbox.style.display="none"; });
+    // Stream & filter dummy
+    document.getElementById("liveStreamBtn")?.addEventListener("click",(e)=>{ e.preventDefault(); alert("Link live streaming akan diumumkan H-1. Hubungi panitia."); });
+    document.getElementById("igFilterLink")?.addEventListener("click",(e)=>{ e.preventDefault(); alert("Filter Instagram: https://www.instagram.com/ar/... (link filter tersedia)"); });
+    document.getElementById("qrCheckinLink")?.addEventListener("click",(e)=>{ e.preventDefault(); alert("QR Code check-in akan diberikan saat kedatangan. Scan untuk absensi digital."); });
+</script>
+</body>
+</html>
